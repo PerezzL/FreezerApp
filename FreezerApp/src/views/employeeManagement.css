@@ -1,0 +1,83 @@
+.employee-management-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.employee-dropdowns {
+  margin-top: 20px;
+}
+
+.employee-dropdown {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.employee-dropdown:hover {
+  background-color: #d1d1d1;
+}
+
+.employee-header {
+  display: flex;
+  align-items: center;
+}
+
+.arrow {
+  margin-right: 10px;
+}
+
+.employee-details {
+  padding: 10px;
+  text-align: left;
+}
+
+.add-employee-button, .back-home-button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.add-employee-button:hover, .back-home-button:hover {
+  background-color: #0056b3;
+}
+
+.modify-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #ffc107;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modify-button:hover {
+  background-color: #e0a800;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}

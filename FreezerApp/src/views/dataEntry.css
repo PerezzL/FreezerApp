@@ -1,0 +1,44 @@
+.data-entry-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .data-entry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .data-entry-form label {
+    font-weight: bold;
+  }
+  
+  .data-entry-form select,
+  .data-entry-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    transition: background-color 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #45a049;
+  }
+  
+  

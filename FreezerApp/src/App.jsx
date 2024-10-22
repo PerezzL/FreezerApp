@@ -1,25 +1,20 @@
-import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Data from './views/Data';
-import HomePage from './views/HomePage';
-import Login from './views/Login';
-import ManageEmp from './views/ManageEmp';
-import NewEmp from './views/NewEmp';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './views/HomePage'; // Asegúrate de que la ruta a tu componente Home sea correcta
+import DataEntry from './views/dataEntry';
+import EmployeeManagement from './views/EmployeeManagement';
 
-
-function App() {
-
+const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/data" element={<Data />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/manage-employees" element={<ManageEmp />} />
-        <Route path="/new-employee" element={<NewEmp />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/carga-datos" element={<DataEntry />} />
+        <Route path="/manejo-empleados" element={<EmployeeManagement />} />
+        {/* Puedes agregar otras rutas aquí para futuras vistas */}
       </Routes>
     </Router>
-  )
-}
+  );
+};
 
-export default App
+export default App;

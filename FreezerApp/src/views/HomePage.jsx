@@ -1,43 +1,34 @@
-import { ProductList } from './ProductList';
-import { StatisticsCard } from './StatisticsCard';
-import { AlertTriangle, Box, Thermometer, FileUp, PieChart } from "lucide-react";
+import React from 'react';
+import './home.css';
+import { useNavigate } from 'react-router-dom';
+import Button from '../components/Button';
 
-export default function HomePage() {
+const Home = () => {
+
+  const navigate = useNavigate();
+
+  const handleDataEntry = () => {
+    navigate('/carga-datos');v
+  };
+
+  const handleStatistics = () => {
+    // Lógica para ir a la página de estadísticas relevantes
+  };
+
+  const handleEmployeeManagement = () => {
+    navigate('/manejo-empleados');
+  };
+
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4">Panel de Control de Cadena de Frío</h1>
-
-      {/* Botones de acción */}
-      <div className="flex space-x-4 mb-6">
-        <StatisticsCard type="button" title="Carga de datos" icon={FileUp} />
-        <StatisticsCard type="button" title="Analíticas relevantes" icon={PieChart} />
-        <StatisticsCard type="button" title="Administración de empleados" />
+    <div className="home-container">
+      <h1>Traqueo de Productos Congelados</h1>
+      <div className="button-container">
+        <Button text="Carga de Datos" onClick={handleDataEntry} />
+        <Button text="Estadísticas Relevantes" onClick={handleStatistics} />
+        <Button text="Manejo de Empleados" onClick={handleEmployeeManagement} />
       </div>
-
-      {/* Tarjetas de estadísticas */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <StatisticsCard 
-          title="Productos en Tránsito" 
-          value="245" 
-          icon={Box} 
-          description="+12% desde el último mes" 
-        />
-        <StatisticsCard 
-          title="Temperatura Promedio" 
-          value="-18.5°C" 
-          icon={Thermometer} 
-          description="Dentro del rango óptimo" 
-        />
-        <StatisticsCard 
-          title="Alertas Activas" 
-          value="3" 
-          icon={AlertTriangle} 
-          description="Requieren atención inmediata" 
-        />
-      </div>
-
-      {/* Lista de productos */}
-      <ProductList />
     </div>
   );
-}
+};
+
+export default Home;
