@@ -5,20 +5,25 @@ import HomePage from './views/HomePage';
 import Login from './views/Login';
 import ManageEmp from './views/ManageEmp';
 import NewEmp from './views/NewEmp';
+import './global.css';
+import { Toaster } from "shadcn-ui/toaster"
 
 
 function App() {
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/data" element={<Data />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/manage-employees" element={<ManageEmp />} />
-        <Route path="/new-employee" element={<NewEmp />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/data" element={<Data />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/manage-employees" element={<ManageEmp />} />
+          <Route path="/new-employee" element={<NewEmp />} />
+        </Routes>
+      </Router>
+      <Toaster />
+    </>
   )
 }
 

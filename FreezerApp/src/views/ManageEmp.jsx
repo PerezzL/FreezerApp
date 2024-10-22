@@ -1,54 +1,25 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import React, { useState } from "react"
+import { Button } from "shadcn-ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-// import { Input } from "@/components/ui/input" // Eliminado porque ya no se usa
-import { Label } from "@/components/ui/label"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
-import { ChevronDown, Plus, Trash, Edit, MoreHorizontal } from "lucide-react"
-
-// Tipo para representar a un empleado
-type Employee = {
-  id: number
-  name: string
-}
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "shadcn-ui/dropdown-menu"
+import { Label } from "shadcn-ui/label"
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "shadcn-ui/dialog"
+import { Input } from "shadcn-ui/input"
+import { Plus, Trash, Edit, MoreHorizontal } from "lucide-react"
 
 export default function ManageEmployees() {
-  const [employees, setEmployees] = useState<Employee[]>([
+  const [employees, setEmployees] = useState([
     { id: 1, name: "Juan Pérez" },
     { id: 2, name: "María García" },
     { id: 3, name: "Carlos Rodríguez" },
   ])
-  // const [newEmployeeName, setNewEmployeeName] = useState("") // Eliminado
-  const [editingEmployee, setEditingEmployee] = useState<Employee | null>(null)
+  const [editingEmployee, setEditingEmployee] = useState(null)
 
-  // const handleAddEmployee = () => { // Eliminado
-  //   if (newEmployeeName.trim()) {
-  //     setEmployees([...employees, { id: Date.now(), name: newEmployeeName.trim() }])
-  //     setNewEmployeeName("")
-  //   }
-  // }
-
-  const handleDeleteEmployee = (id: number) => {
+  const handleDeleteEmployee = (id) => {
     setEmployees(employees.filter(emp => emp.id !== id))
   }
 
-  const handleEditEmployee = (employee: Employee) => {
+  const handleEditEmployee = (employee) => {
     setEditingEmployee(employee)
   }
 
@@ -111,7 +82,8 @@ export default function ManageEmployees() {
             <Input
               id="name"
               value={editingEmployee?.name || ""}
-              onChange={(e) => setEditingEmployee(prev => prev ? {...prev, name: e.target.value} : null)}
+              onChange={(e) => setEditingEmployee(prev => prev ? {...prev, name: e.target.value} : 
+              null)}
               className="col-span-3"
             />
           </div>

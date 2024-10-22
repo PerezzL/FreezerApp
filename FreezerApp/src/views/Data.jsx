@@ -1,9 +1,9 @@
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import React, { useState } from "react"
+import { Button } from "shadcn-ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "shadcn-ui/card"
+import { Input } from "shadcn-ui/input"
+import { Label } from "shadcn-ui/label"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "shadcn-ui/select"
 import { Loader2, Send } from "lucide-react"
 
 export default function CargaDatos() {
@@ -11,7 +11,7 @@ export default function CargaDatos() {
   const [temperatura, setTemperatura] = useState("")
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event) => {
     event.preventDefault()
     setLoading(true)
     // Aquí iría la lógica para enviar los datos a la base de datos
@@ -68,20 +68,18 @@ export default function CargaDatos() {
                 />
               </div>
             </div>
+            <Button type="submit" className="w-full mt-4" disabled={loading}>
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Cargando...
+                </>
+              ) : (
+                "Cargar"
+              )}
+            </Button>
           </form>
         </CardContent>
-        <CardFooter>
-          <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? (
-              <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Cargando...
-              </>
-            ) : (
-              "Cargar"
-            )}
-          </Button>
-        </CardFooter>
       </Card>
     </div>
   )

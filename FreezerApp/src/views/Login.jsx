@@ -1,15 +1,17 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import { Eye, EyeOff, LockKeyhole } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { Button } from "shadcn-ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "shadcn-ui/card"
+import { Checkbox } from "shadcn-ui/checkbox"
+import { Input } from "shadcn-ui/input"
+import { Label } from "shadcn-ui/label"
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
 
-  const handleSubmit = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    // Aquí iría la lógica de autenticación
     console.log("Intento de inicio de sesión")
   }
 
@@ -19,7 +21,7 @@ export default function LoginPage() {
         <CardHeader className="space-y-1">
           <CardTitle className="text-2xl font-bold text-center">Iniciar Sesión</CardTitle>
           <CardDescription className="text-center">
-            Ingresa tus credenciales para acceder.
+            Ingresa tus credenciales para acceder al panel de control
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -52,6 +54,10 @@ export default function LoginPage() {
                     )}
                   </Button>
                 </div>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox id="remember" />
+                <Label htmlFor="remember">Recordar sesión</Label>
               </div>
               <Button type="submit" className="w-full">
                 <LockKeyhole className="mr-2 h-4 w-4" /> Iniciar Sesión

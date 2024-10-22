@@ -1,18 +1,10 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import { toast } from "@/components/ui/use-toast"
+import React, { useState } from "react"
+import { Button } from "shadcn-ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "shadcn-ui/card"
+import { Input } from "shadcn-ui/input"
+import { Label } from "shadcn-ui/label"
+import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "shadcn-ui/select"
+import { useToast } from "shadcn-ui/use-toast"
 
 export default function AddEmployee() {
   const [firstName, setFirstName] = useState("")
@@ -21,7 +13,7 @@ export default function AddEmployee() {
   const [email, setEmail] = useState("")
   const [role, setRole] = useState("")
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = (event) => {
     event.preventDefault()
     // Aquí iría la lógica para enviar los datos del nuevo empleado al servidor
     console.log("Nuevo empleado:", { firstName, lastName, password, email, role })
